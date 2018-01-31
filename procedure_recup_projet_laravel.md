@@ -1,4 +1,4 @@
-    ##RECUPERER LE PROJET LARAVEL
+ ##RECUPERER LE PROJET LARAVEL
 
 1. créer un repository sous git 
  
@@ -27,59 +27,64 @@
 
         git clone du projet laravel     
     
-
+-----
  
-    ##INSTALLER COMPOSER  
+ ##INSTALLER COMPOSER  
 
-SE POSITIONNER DANS LE DOSSIER PROJET LARAVEL (ex : dossier Leila)  
+1. Se positionner dans le dossier projet laravel (ex : dossier Leila)  
 
         mkdir .composer  
         curl -sS https://getcomposer.org/installer | php -d allow_url_fopen=On  
         composer install
     
 
-CREER UN FICHIER .env (copier le fichier .env.example et le renommer en .env)
+2. Créer un fichier .env (copier le fichier .env.example et le renommer en .env)
 
-    cp .env.example .env   
-    php artisan key:generate  
+        cp .env.example .env   
+        php artisan key:generate  
 
 
-MODIFIER LE CHEMIN DANS LE FICHIER .conf   
+3. Modifier le chemin dans le fichier .conf  (leila.conf) 
 
-     DocumentRoot /var/www/html/Leila/machine_cafe_laravel/public
+        DocumentRoot /var/www/html/Leila/machine_cafe_laravel/public
             DirectoryIndex index.php
             
 
-REDEMARRER
+4. Redémarrer
 
-	service apache2 restart  
+	   service apache2 restart  
 	
+-----
 
-    ##MODIFIER LES DROITS USER (dans le dossier laravel)  
+ ##MODIFIER LES DROITS USER (dans le dossier laravel)  
 
-verifier les droits du fichier storage    
+Verifier les droits du fichier storage    
     
-    chown -R user/groupe dir nom fichier    
+        chown -R user/groupe dir nom fichier    
 
-    ex : chown -R www-data:www-data *
+        ex : chown -R www-data:www-data *
     
--R = récursive :le dossier et tous les fichiers enfants   
+        -R = récursive :le dossier et tous les fichiers enfants   
 
 
-    ##FAIRE UNE MIGRATION DE LA BDD  
+-----
 
-    créer une base de données sur phpmyadmin (coté serveur)
-    modifier le fichier .env : username et mdp de la BDD
-    php artisan migrate:fresh    
+ ##FAIRE UNE MIGRATION DE LA BDD  
+
+        créer une base de données sur phpmyadmin (coté serveur)
+        modifier le fichier .env : username et mdp de la BDD  
+
+        php artisan migrate:fresh   
 
 ou importer la BDD via phpmyadmin en local sur phpmyadmin serveur  
 
+-----
 
-    ##ENLEVER LA DEBUGBAR   
+ ##ENLEVER LA DEBUGBAR   
 
-    dans le fichier .env  
-    nano .env  
-    modifier : debugbar = false   
+        dans le fichier .env  
+        nano .env  
+        modifier : debugbar = false   
     
     
 ------
@@ -88,20 +93,17 @@ ou importer la BDD via phpmyadmin en local sur phpmyadmin serveur
 
 en local, vérifier la version PHP (bash)
 
-    php -v
+        php -v
 
 si mauvaise version modifier le path : 
 
-    path
-    modifier
-    parcourir
-    selectionner la bonne version
+        path
+        modifier
+        parcourir
+        selectionner la bonne version
       
+
 dans serveur :  
 
-    composer update
-    composer install
-    
-    
-
-    
+        composer update
+        composer install  
